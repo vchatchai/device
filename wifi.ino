@@ -55,7 +55,7 @@ void setup_wifi() {
   // Serial.println("mounting FS...");
 
 
-  statusTicker.attach(0.6, statusTick);
+  statusTicker.attach(0.6, ledStatusNetworkToggle);
 
 
   WiFiManagerParameter custom_mqtt_server("server", "mqtt server", config.config_mqtt_server, 40);
@@ -114,6 +114,7 @@ void setup_wifi() {
       saveConfiguration();
     }
 
-    digitalWrite(LED_POWER, LED_POWER_ON);
+    // digitalWrite(LED_POWER, LED_POWER_ON);
+    ledStatusNetworkON();
 
 }

@@ -1,7 +1,6 @@
-#include <Bounce2.h>
+
 #include <WiFiManager.h>          
 
-Bounce debouncer = Bounce(); // สร้าง debouncer object
 long nowTime = 0; 
 long lastTime = 0; 
 long resetTime = 0;
@@ -9,12 +8,6 @@ long resetTime = 0;
 Ticker resetTicker;
 
 
-void resetTick(){
-  int state = digitalRead(LED_POWER);  // get the current state of GPIO1 pin
-  digitalWrite(LED_POWER, !state);     // set pin to the opposite state
-  digitalWrite(LED_STATUS, !state);     // set pin to the opposite state
-
-}
 
 void pushButtonSetup() { 
 
@@ -22,7 +15,8 @@ void pushButtonSetup() {
   // debouncer.interval(25); // กำหนดเวลาการเปลี่ยนสถานะให้กับ debouncer object ที่ 25 มิลลิวินาที
 
 
-  pinMode(BUTTON_PIN, INPUT_PULLUP);
+  // pinMode(BUTTON_PIN, INPUT_PULLUP);
+
 
 }
 
@@ -36,12 +30,13 @@ void pushButtonLoop() {
   // if ( debouncer.fell() ) {
     nowTime = millis();
 
-    int value = digitalRead(BUTTON_PIN);
+    // int value = digitalRead(BUTTON_PIN);
+    int value = mcp.digitalRead(PUSH_BUTTON);
     if(value == LOW){
       
       if(nowTime - resetTime > 6000){
         if(typeCode != 3){
-          resetTicker.attach(0.6, resetTick);
+          resetTicker.attach(0.6, ledStatusSwitchAndNetworkToggle);
           typeCode = 3;
         }
       }else if(nowTime -lastTime > 3000){

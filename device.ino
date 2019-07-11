@@ -1,3 +1,4 @@
+
  
 #include <TransmissionResult.h>
 #include <NetworkInfo.h>
@@ -28,6 +29,8 @@ struct Config {
 Config config;                         // <- global configuration object
 
 
+
+
 //WIFI configuration
 // #define wifi_ssid "Home"
 // #define wifi_password "manager1"
@@ -49,7 +52,7 @@ String node_topic = farm + "/node/status";
 String valve_topic = farm + "/valve/";
 String pump_topic = farm + "/pump/";
 //PIN BUTTON
-#define BUTTON_PIN 0
+// #define BUTTON_PIN 0
 //DHT SENSOR
 #define DHTPIN  5
 
@@ -59,39 +62,40 @@ String pump_topic = farm + "/pump/";
 #define LED_POWER_ON LOW
 #define LED_POWER_OFF HIGH
 
-#define D8  15
-#define D7  13
-#define D6  12
-#define D5  14
-#define EN   16
+// #define D8  15
+// #define D7  13
+// #define D6  12
+// #define D5  14
+// #define EN   16
 
 
 
 Ticker statusTicker;
 Ticker powerTicker;
 
-void statusTick()
-{
+// void statusTick()
+// {
 
-  //toggle state
-  int state = digitalRead(LED_POWER);  // get the current state of GPIO1 pin
-  digitalWrite(LED_POWER, !state);     // set pin to the opposite state
-}
+//   //toggle state
+//   int state = digitalRead(LED_POWER);  // get the current state of GPIO1 pin
+//   digitalWrite(LED_POWER, !state);     // set pin to the opposite state
+// }
 
-void powerTick()
-{
+// void powerTick()
+// {
 
-  //toggle state
-  int state = digitalRead(LED_STATUS);  // get the current state of GPIO1 pin
-  digitalWrite(LED_STATUS, !state);     // set pin to the opposite state
+//   //toggle state
+//   int state = digitalRead(LED_STATUS);  // get the current state of GPIO1 pin
+//   digitalWrite(LED_STATUS, !state);     // set pin to the opposite state
 
-}
+// }
 
 
 void setup() {
 
   Serial.begin(115200);
   Serial.println("\r\nBooting...");
+  expenderSetup();
   configSetup();
   valveSetup();
   Serial.println("\r\nSet Value PinMode.");

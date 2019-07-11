@@ -6,7 +6,7 @@
 WiFiClient espClient;
 PubSubClient mqtt_client(espClient);
 void mqttSetup(){
-  statusTicker.attach(3, statusTick);
+  statusTicker.attach(3, ledStatusNetworkToggle);
 
   mqtt_client.setServer(config.config_mqtt_server, config.config_mqtt_port);
   mqtt_client.setCallback(callback);
@@ -14,13 +14,14 @@ void mqttSetup(){
 
   statusTicker.detach();
 
-  digitalWrite(LED_POWER, LED_POWER_ON);     // set pin to the opposite state
+  // digitalWrite(LED_POWER, LED_POWER_ON);     // set pin to the opposite state
+  ledStatusNetworkON();
 }
 
 
 void mqtt_reconnect() {
 
-  statusTicker.attach(3, statusTick);
+  statusTicker.attach(3, ledStatusNetworkToggle);
   // Loop until we're reconnected
   while (!mqtt_client.connected()) {
     Serial.print("Attempting MQTT connection...");
@@ -61,7 +62,8 @@ void mqtt_reconnect() {
 
   statusTicker.detach();
 
-  digitalWrite(LED_POWER, LED_POWER_ON);     // set pin to the opposite state
+  // digitalWrite(LED_POWER, LED_POWER_ON);     // set pin to the opposite state
+  ledStatusNetworkON();
 }
 
 void mqttLoop(){ 
