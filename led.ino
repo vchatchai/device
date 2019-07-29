@@ -1,11 +1,12 @@
-
+#define LED_STATUS_SWITCH_ON LOW
+#define LED_STATUS_SWITCH_OFF HIGH
 
 void ledStatusSwitchON(){
-    mcp.digitalWrite(LED_STATUS_SWITCH, HIGH);
+    mcp.digitalWrite(LED_STATUS_SWITCH, LED_STATUS_SWITCH_ON);
 }
 
 void ledStatusSwitchOFF(){
-    mcp.digitalWrite(LED_STATUS_SWITCH, LOW);
+    mcp.digitalWrite(LED_STATUS_SWITCH, LED_STATUS_SWITCH_OFF);
 
 }
 
@@ -15,12 +16,12 @@ void ledStatusSwitchToggle(){
 }
 
 void ledStatusNetworkON(){
-    mcp.digitalWrite(LED_STATUS_NETWORK, HIGH);
+    mcp.digitalWrite(LED_STATUS_NETWORK, LED_STATUS_SWITCH_ON);
 
 }
 
 void ledStatusNetworkOFF(){
-    mcp.digitalWrite(LED_STATUS_NETWORK, LOW);
+    mcp.digitalWrite(LED_STATUS_NETWORK, LED_STATUS_SWITCH_OFF);
 
 }
 

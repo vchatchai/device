@@ -32,6 +32,10 @@ void pushButtonLoop() {
 
     // int value = digitalRead(BUTTON_PIN);
     int value = mcp.digitalRead(PUSH_BUTTON);
+  // Serial.println("\r\emcp.digitalRead");
+
+  // Serial.print(value);
+  // Serial.print("\n");
     if(value == LOW){
       
       if(nowTime - resetTime > 6000){

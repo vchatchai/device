@@ -54,7 +54,7 @@ String pump_topic = farm + "/pump/";
 //PIN BUTTON
 // #define BUTTON_PIN 0
 //DHT SENSOR
-#define DHTPIN  5
+#define DHTPIN  16
 
 //LED PORT
 #define LED_STATUS 4
@@ -138,4 +138,5 @@ void loop() {
   mqttLoop();
   dhtLoop();
   pushButtonLoop();
+  expenderLoop();
 }
