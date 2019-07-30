@@ -81,13 +81,7 @@ Wire Wire Line
 Wire Wire Line
 	3100 3950 3250 3950
 Wire Wire Line
-	3250 3950 3250 5300
-Wire Wire Line
 	3850 4550 3600 4550
-Wire Wire Line
-	3600 4550 3600 5400
-Wire Wire Line
-	3600 5400 3250 5400
 Wire Wire Line
 	3500 6300 3500 6050
 Wire Wire Line
@@ -241,25 +235,12 @@ Wire Wire Line
 	1950 6050 2700 6050
 Wire Wire Line
 	1650 4150 1650 2900
-Wire Wire Line
-	1650 2900 2150 2900
 Connection ~ 2800 2900
 Wire Wire Line
 	1450 4150 1450 2850
 Wire Wire Line
 	1550 2850 1550 4000
 Connection ~ 1550 4000
-$Comp
-L Connector_Generic:Conn_01x03 J6
-U 1 1 5D3BA3DB
-P 3050 5400
-F 0 "J6" H 2968 5075 50  0000 C CNN
-F 1 "JUMPER" H 2968 5166 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 3050 5400 50  0001 C CNN
-F 3 "~" H 3050 5400 50  0001 C CNN
-	1    3050 5400
-	-1   0    0    1   
-$EndComp
 Connection ~ 5900 3350
 Wire Wire Line
 	5900 3350 5900 3750
@@ -269,32 +250,11 @@ Wire Wire Line
 	5650 3550 6300 3550
 Wire Wire Line
 	6300 3350 5900 3350
-$Comp
-L Connector_Generic:Conn_01x03 J2
-U 1 1 5D32579D
-P 3850 3150
-F 0 "J2" H 3930 3192 50  0000 L CNN
-F 1 "SENSOR" H 3930 3101 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 3850 3150 50  0001 C CNN
-F 3 "~" H 3850 3150 50  0001 C CNN
-	1    3850 3150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3650 3250 3500 3250
-Wire Wire Line
-	3650 3050 3500 3050
 Wire Wire Line
 	3500 3050 3500 2900
 Connection ~ 3500 2900
 Wire Wire Line
 	3500 2900 4550 2900
-Wire Wire Line
-	3100 3650 3250 3650
-Wire Wire Line
-	3250 3650 3250 3150
-Wire Wire Line
-	3250 3150 3650 3150
 $Comp
 L Connector_Generic:Conn_01x04 J7
 U 1 1 5D3E2091
@@ -309,12 +269,52 @@ $EndComp
 Wire Wire Line
 	3500 3250 3500 6050
 Wire Wire Line
+	3100 4150 3350 4150
+Wire Wire Line
+	3350 4150 3350 3150
+Wire Wire Line
+	3650 3050 3500 3050
+Wire Wire Line
+	3350 3150 3650 3150
+Wire Wire Line
+	3650 3250 3500 3250
+$Comp
+L Connector_Generic:Conn_01x03 J6
+U 1 1 5D3BA3DB
+P 3050 5400
+F 0 "J6" H 2968 5075 50  0000 C CNN
+F 1 "JUMPER" H 2968 5166 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 3050 5400 50  0001 C CNN
+F 3 "~" H 3050 5400 50  0001 C CNN
+	1    3050 5400
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3250 3950 3250 5300
+Wire Wire Line
+	3600 4550 3600 5400
+Wire Wire Line
+	3600 5400 3250 5400
+Wire Wire Line
 	3250 5500 3250 5750
 Wire Wire Line
 	3250 5750 2150 5750
 Wire Wire Line
-	2150 5750 2150 2900
+	2150 2900 2800 2900
+Wire Wire Line
+	1650 2900 2150 2900
 Connection ~ 2150 2900
 Wire Wire Line
-	2150 2900 2800 2900
+	2150 5750 2150 2900
+$Comp
+L Connector_Generic:Conn_01x03 J2
+U 1 1 5D32579D
+P 3850 3150
+F 0 "J2" H 3930 3192 50  0000 L CNN
+F 1 "SENSOR" H 3930 3101 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 3850 3150 50  0001 C CNN
+F 3 "~" H 3850 3150 50  0001 C CNN
+	1    3850 3150
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
