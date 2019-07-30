@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:myFarm-cache
-EELAYER 29 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -88,8 +88,6 @@ Wire Wire Line
 	3600 4550 3600 5400
 Wire Wire Line
 	3600 5400 3250 5400
-Wire Wire Line
-	3250 5500 3500 5500
 Wire Wire Line
 	3500 6300 3500 6050
 Wire Wire Line
@@ -244,7 +242,7 @@ Wire Wire Line
 Wire Wire Line
 	1650 4150 1650 2900
 Wire Wire Line
-	1650 2900 2800 2900
+	1650 2900 2150 2900
 Connection ~ 2800 2900
 Wire Wire Line
 	1450 4150 1450 2850
@@ -285,11 +283,6 @@ $EndComp
 Wire Wire Line
 	3650 3250 3500 3250
 Wire Wire Line
-	3500 3250 3500 5500
-Connection ~ 3500 5500
-Wire Wire Line
-	3500 5500 3500 6050
-Wire Wire Line
 	3650 3050 3500 3050
 Wire Wire Line
 	3500 3050 3500 2900
@@ -313,4 +306,15 @@ F 3 "~" H 1550 4350 50  0001 C CNN
 	1    1550 4350
 	0    1    1    0   
 $EndComp
+Wire Wire Line
+	3500 3250 3500 6050
+Wire Wire Line
+	3250 5500 3250 5750
+Wire Wire Line
+	3250 5750 2150 5750
+Wire Wire Line
+	2150 5750 2150 2900
+Connection ~ 2150 2900
+Wire Wire Line
+	2150 2900 2800 2900
 $EndSCHEMATC
