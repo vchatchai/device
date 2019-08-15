@@ -7,19 +7,24 @@
 
 
 
-#define ON HIGH
-#define OFF LOW
+#define ON LOW
+#define OFF HIGH
 
-#define ENABLE_A 1
-#define ENABLE_B 2
+#define RELAY_1 0
+#define RELAY_2 1
+
 #define INA_1 2
 #define INA_2 3
 #define INB_1 4
 #define INB_2 5
-
+#define ENABLE_A 6
+#define ENABLE_B 7
 
 
 #define TYPE 1
+
+
+
 void valveSetup()
 {
   
@@ -34,8 +39,8 @@ void valveSetup()
   // digitalWrite(D5, LOW);
   // digitalWrite(D6, LOW);
   // digitalWrite(D7, LOW);
-  // digitalWrite(D8, LOW);
   // digitalWrite(EN, LOW);
+  // digitalWrite(D8, LOW);
 
   mcp.pinMode(ENABLE_A, OUTPUT);
   mcp.pinMode(ENABLE_B, OUTPUT);
@@ -43,6 +48,9 @@ void valveSetup()
   mcp.pinMode(INA_2, OUTPUT);
   mcp.pinMode(INB_1, OUTPUT);
   mcp.pinMode(INB_2, OUTPUT);
+  mcp.pinMode(RELAY_1, OUTPUT);
+  mcp.pinMode(RELAY_2, OUTPUT);
+  valveOff();
 }
 
 void valveRelayOn()
@@ -50,8 +58,8 @@ void valveRelayOn()
 
   // digitalWrite(D7, ON);
   // digitalWrite(D8, ON);
-    mcp.digitalWrite(INA_1, ON);
-    mcp.digitalWrite(INA_2, ON); 
+    mcp.digitalWrite(RELAY_1, ON);
+    mcp.digitalWrite(RELAY_2, ON); 
 
   //LED_STATUS ON
   // ledState = 2;
@@ -70,8 +78,8 @@ void valveRelayOff()
   // ledState = 0;
   // digitalWrite(LED_STATUS, !ledState);
 
-    mcp.digitalWrite(INA_1, OFF);
-    mcp.digitalWrite(INA_2, OFF); 
+    mcp.digitalWrite(RELAY_1, OFF);
+    mcp.digitalWrite(RELAY_2, OFF); 
 
   ledStatusSwitchOFF();
   Serial.print("Valve Relay Off");
@@ -187,4 +195,13 @@ void valveOff()
   {
     valveDriverOff();
   }
+}
+
+uint8_t getCurrentValveStatus1(){
+  return mcp.digitalRead(RELAY_1);
+}
+
+uint8_t getCurrentValveStatus2(){
+  return mcp.digitalRead(RELAY_2);
+
 }

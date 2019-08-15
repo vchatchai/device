@@ -2,7 +2,8 @@
 #include <ArduinoJson.h>
 #define DHTTYPE DHT22
 
-
+//DHT SENSOR
+#define DHTPIN 14
 
 DHT dht(DHTPIN, DHTTYPE);
 
@@ -13,19 +14,24 @@ float hum = 0.0;
 float diff = 1.0;
 int min_timeout = 2000; //in ms
 
-void dhtSetup() {
+void dhtSetup()
+{
+  pinMode(DHTPIN, INPUT);
   dht.begin();
 }
 
-bool checkBound(float newValue, float prevValue, float maxDiff) {
+bool checkBound(float newValue, float prevValue, float maxDiff)
+{
   return (true);
   return newValue < prevValue - maxDiff || newValue > prevValue + maxDiff;
 }
 
-void dhtLoop() {
+void dhtLoop()
+{
 
   now = millis();
-  if (now - lastMsg > min_timeout) {
+  if (now - lastMsg > min_timeout)
+  {
     lastMsg = now;
     now = millis();
     //    float newTemp = temp + 2; //hdc.readTemperature();
@@ -34,7 +40,7 @@ void dhtLoop() {
     float newHum = dht.readHumidity();
     // Read temperature as Celsius (the default)
     float newTemp = dht.readTemperature();
-/*
+    /*
     if (checkBound(newTemp, temp, diff)) {
       temp = newTemp;
       Serial.print("Sent ");
@@ -51,21 +57,21 @@ void dhtLoop() {
       mqtt_client.publish((humidity_topic).c_str(), String(hum).c_str(), true);
     }
     */
-  String msg;
-  mqtt_client_id = ESP.getChipId();
-  DynamicJsonDocument doc(512);
+    String msg;
+    mqtt_client_id = ESP.getChipId();
+    DynamicJsonDocument doc(512);
 
-  JsonObject obj = doc.to<JsonObject>();
+    JsonObject obj = doc.to<JsonObject>();
 
-  obj["NodeID"] = mqtt_client_id;
-  obj["Temperature"] = newTemp;
-  obj["Humidity"] = newHum;
-  obj["Valve1"] = digitalRead(D8);
-  obj["Valve2"] = digitalRead(D7);
-  serializeJson(doc, msg);
-  Serial.print(" ");
-  Serial.print( node_topic);
-  Serial.println( " " + msg );
-  mqtt_client.publish((node_topic).c_str(), msg.c_str(), true);
+    obj["NodeID"] = mqtt_client_id;
+    obj["Temperature"] = newTemp;
+    obj["Humidity"] = newHum;
+    obj["Valve1"] = getCurrentValveStatus1();
+    obj["Valve2"] = getCurrentValveStatus2();
+    serializeJson(doc, msg);
+    Serial.print(" ");
+    Serial.print(node_topic);
+    Serial.println(" " + msg);
+    mqtt_client.publish((node_topic).c_str(), msg.c_str(), true);
   }
 }

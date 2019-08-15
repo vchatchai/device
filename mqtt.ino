@@ -104,11 +104,11 @@ void callback(String topic, byte* message, unsigned int length) {
   }else if (topic == pump_topic ) {
     powerTicker.detach();
     Serial.print("Changing Valve to ");
-    if (messageTemp == "on") {
-      pumpOn();
-    } else if (messageTemp == "off") {
-      pumpOff();
-    }
+    // if (messageTemp == "on") {
+    //   pumpOn();
+    // } else if (messageTemp == "off") {
+    //   pumpOff();
+    // }
   }
   Serial.println();
 }

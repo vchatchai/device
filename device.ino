@@ -51,14 +51,10 @@ String temperature_topic = farm + "/sensor/temperature/" ;
 String node_topic = farm + "/node/status";
 String valve_topic = farm + "/valve/";
 String pump_topic = farm + "/pump/";
-//PIN BUTTON
-// #define BUTTON_PIN 0
-//DHT SENSOR
-#define DHTPIN  16
 
 //LED PORT
-#define LED_STATUS 4
-#define LED_POWER 2
+// #define LED_STATUS 4
+// #define LED_POWER 2
 #define LED_POWER_ON LOW
 #define LED_POWER_OFF HIGH
 
@@ -100,8 +96,8 @@ void setup() {
   valveSetup();
   Serial.println("\r\nSet Value PinMode.");
   // initialize digital pin LED as an output.
-  pinMode(LED_POWER, OUTPUT);
-  pinMode(LED_STATUS, OUTPUT);
+  // pinMode(LED_POWER, OUTPUT);
+  // pinMode(LED_STATUS, OUTPUT);
 
   dhtSetup();
 
@@ -132,7 +128,9 @@ void setup() {
 }
 
 void loop() {
-
+ 
+//  valveOn();
+ 
   ArduinoOTA.handle();
 
   mqttLoop();

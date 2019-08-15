@@ -1,31 +1,31 @@
 
 
-//#define EnB  5
-#define PUMP1 12
-#define PUMP2 13
+// //#define EnB  5
+// #define PUMP1 12
+// #define PUMP2 13
 
-void pumpSetup(){
+// void pumpSetup(){
     
-}
+// }
 
-void pumpOn()
-{ 
+// void pumpOn()
+// { 
    
-  digitalWrite(PUMP1, HIGH); 
+//   digitalWrite(PUMP1, HIGH); 
 
 
-  //LED_STATUS ON
-  ledState = 1;
-  digitalWrite(LED_STATUS, !ledState);
-  Serial.print("Pump On");
-}
+//   //LED_STATUS ON
+//   ledState = 1;
+//   digitalWrite(LED_STATUS, !ledState);
+//   Serial.print("Pump On");
+// }
 
-void pumpOff()
-{ 
-  digitalWrite(PUMP1, HIGH); 
+// void pumpOff()
+// { 
+//   digitalWrite(PUMP1, HIGH); 
 
-  //LED_STATUS ON
-  ledState = 0;
-  digitalWrite(LED_STATUS, !ledState);
-  Serial.print("pump Off");
-}
+//   //LED_STATUS ON
+//   ledState = 0;
+//   digitalWrite(LED_STATUS, !ledState);
+//   Serial.print("pump Off");
+// }
