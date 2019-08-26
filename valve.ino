@@ -13,15 +13,15 @@
 #define RELAY_1 0
 #define RELAY_2 1
 
-#define INA_1 2
-#define INA_2 3
-#define INB_1 4
-#define INB_2 5
-#define ENABLE_A 6
+#define INA_1 3
+#define INA_2 4
+#define INB_1 5
+#define INB_2 6
+#define ENABLE_A 2
 #define ENABLE_B 7
 
 
-#define TYPE 1
+#define TYPE 2
 
 
 

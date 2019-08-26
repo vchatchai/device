@@ -26,6 +26,8 @@ void expenderSetup() {
   mcp.pinMode(LED_STATUS_NETWORK, OUTPUT);
 //   mcp.pinMode
 
+  valveOff();
+
 
   mcp.pinMode(PUSH_BUTTON, INPUT);  // use the p13 LED as debugging
   mcp.pullUp(PUSH_BUTTON, HIGH);  // turn on a 100K pullup internally
