@@ -1,0 +1,31 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#(c) SnapEDA 2016 (snapeda.com)
+#This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA) with Design Exception 1.0
+#
+# DS1832S+
+#
+DEF DS1832S+ U 0 40 Y Y 1 L N
+F0 "U" -400 500 50 H V L BNN
+F1 "DS1832S+" -400 -600 50 H V L BNN
+F2 "SOIC127P600X175-8N" 0 0 50 H I L BNN
+F3 "" 0 0 50 H I L BNN
+F4 "IPC7351B" 0 0 50 H I L BNN
+F5 "Maxim Integrated" 0 0 50 H I L BNN
+DRAW
+P 2 0 0 10 -400 500 400 500 N
+P 2 0 0 10 400 500 400 -500 N
+P 2 0 0 10 400 -500 -400 -500 N
+P 2 0 0 10 -400 -500 -400 500 N
+X GND 4 600 -400 200 L 40 40 0 0 W 
+X VCC 8 600 400 200 L 40 40 0 0 W 
+X ~PBRST~ 1 -600 300 200 R 40 40 0 0 I 
+X TD 2 -600 100 200 R 40 40 0 0 B 
+X TOL 3 -600 -100 200 R 40 40 0 0 B 
+X ~ST~ 7 600 200 200 L 40 40 0 0 I 
+X ~RST~ 6 600 0 200 L 40 40 0 0 O 
+X RST 5 600 -100 200 L 40 40 0 0 O 
+ENDDRAW
+ENDDEF
+#
+# End Library

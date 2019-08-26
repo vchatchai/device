@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name DS1232LPN)(type Legacy)(uri ${KIPRJMOD}/DS1232LPN.lib)(options "")(descr ""))
+  (lib (name DS1832S_)(type Legacy)(uri ${KIPRJMOD}/DS1832S_/DS1832S_.lib)(options "")(descr ""))
+)
