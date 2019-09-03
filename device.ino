@@ -69,6 +69,7 @@ String pump_topic = farm + "/pump/";
 Ticker statusTicker;
 Ticker powerTicker;
 
+Ticker watchdog;
 // void statusTick()
 // {
 
@@ -86,9 +87,19 @@ Ticker powerTicker;
 
 // }
 
+int count = 0;
+
+void watchdogTicker() {
+ 
+  digitalWrite(D6, count);   // turn the LED on (HIGH is the voltage level)
+  count = !count;
+}
+
 
 void setup() {
 
+  pinMode(D6, OUTPUT);
+  watchdog.attach(0.3, watchdogTicker);
   Serial.begin(115200);
   Serial.println("\r\nBooting...");
   expenderSetup();
