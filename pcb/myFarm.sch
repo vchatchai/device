@@ -58,7 +58,7 @@ $EndComp
 Wire Wire Line
 	5450 4500 5450 5700
 Wire Wire Line
-	5450 5700 6250 5700
+	5450 5700 6000 5700
 Wire Wire Line
 	7300 5200 7300 5700
 Wire Wire Line
@@ -76,10 +76,6 @@ Wire Wire Line
 Connection ~ 7300 2550
 Wire Wire Line
 	7300 2550 7550 2550
-Wire Wire Line
-	5850 3600 6000 3600
-Wire Wire Line
-	6600 4200 6350 4200
 Wire Wire Line
 	6250 5950 6250 5700
 Wire Wire Line
@@ -180,29 +176,6 @@ Wire Wire Line
 Wire Wire Line
 	8000 4900 9050 4900
 Connection ~ 5550 2550
-$Comp
-L Connector_Generic:Conn_01x03 J6
-U 1 1 5D3BA3DB
-P 5800 5050
-F 0 "J6" H 5718 4725 50  0000 C CNN
-F 1 "JUMPER" H 5718 4816 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 5800 5050 50  0001 C CNN
-F 3 "~" H 5800 5050 50  0001 C CNN
-	1    5800 5050
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	6350 4200 6350 5050
-Wire Wire Line
-	6350 5050 6000 5050
-Wire Wire Line
-	6000 5150 6000 5400
-Wire Wire Line
-	6000 5400 4900 5400
-Wire Wire Line
-	4900 2550 5550 2550
-Wire Wire Line
-	4900 5400 4900 2550
 Wire Wire Line
 	8000 3600 8350 3600
 Wire Wire Line
@@ -249,7 +222,6 @@ F 3 "~" H 3300 2050 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3400 1700 4050 1700
-Connection ~ 4900 2550
 Wire Wire Line
 	4250 4250 4250 5700
 Wire Wire Line
@@ -257,8 +229,6 @@ Wire Wire Line
 Connection ~ 5450 5700
 Wire Wire Line
 	4250 3450 4250 2550
-Wire Wire Line
-	4250 2550 4900 2550
 Wire Wire Line
 	4400 3850 4400 3300
 Wire Wire Line
@@ -279,8 +249,6 @@ Wire Wire Line
 Connection ~ 3300 1700
 Wire Wire Line
 	3300 1700 3300 1850
-Wire Wire Line
-	6000 3600 6000 4950
 Wire Wire Line
 	5850 3900 6150 3900
 Wire Wire Line
@@ -338,11 +306,11 @@ Wire Wire Line
 Wire Wire Line
 	6850 2800 6850 1800
 Wire Wire Line
-	6550 3800 6550 2800
+	6450 3800 6450 2800
 Wire Wire Line
-	6550 2800 6850 2800
+	6450 2800 6850 2800
 Wire Wire Line
-	5850 3800 6550 3800
+	5850 3800 6450 3800
 Wire Wire Line
 	6000 1800 6000 3200
 Wire Wire Line
@@ -363,7 +331,7 @@ Wire Wire Line
 	6400 1800 6400 2550
 Connection ~ 6400 2550
 Wire Wire Line
-	6400 2550 6750 2550
+	6400 2550 6550 2550
 Wire Wire Line
 	6500 1800 6500 2200
 Wire Wire Line
@@ -452,17 +420,6 @@ Wire Wire Line
 	8000 2550 9050 2550
 Wire Wire Line
 	8650 2450 9050 2450
-$Comp
-L Connector_Generic:Conn_01x02 J1
-U 1 1 5D3273EB
-P 9250 2450
-F 0 "J1" H 9330 2442 50  0000 L CNN
-F 1 "LED" H 9330 2351 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 9250 2450 50  0001 C CNN
-F 3 "~" H 9250 2450 50  0001 C CNN
-	1    9250 2450
-	1    0    0    -1  
-$EndComp
 $Comp
 L Connector_Generic:Conn_01x02 J9
 U 1 1 5D6744E9
@@ -553,4 +510,65 @@ Wire Wire Line
 Connection ~ 8100 1950
 Wire Wire Line
 	8100 1950 8400 1950
+$Comp
+L Connector_Generic:Conn_01x03 J6
+U 1 1 5D3BA3DB
+P 6450 4500
+F 0 "J6" H 6368 4175 50  0000 C CNN
+F 1 "JUMPER" H 6368 4266 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 6450 4500 50  0001 C CNN
+F 3 "~" H 6450 4500 50  0001 C CNN
+	1    6450 4500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6600 4200 6450 4200
+Wire Wire Line
+	6450 4200 6450 4300
+Wire Wire Line
+	6350 3600 6350 4300
+Wire Wire Line
+	6550 4300 6550 2550
+Connection ~ 6550 2550
+Wire Wire Line
+	6550 2550 6750 2550
+Wire Wire Line
+	5850 3600 6350 3600
+Wire Wire Line
+	4250 2550 5550 2550
+$Comp
+L Connector_Generic:Conn_01x02 J15
+U 1 1 5D75F2CC
+P 5700 5300
+F 0 "J15" H 5780 5292 50  0000 L CNN
+F 1 "SELECTOR" H 5780 5201 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 5700 5300 50  0001 C CNN
+F 3 "~" H 5700 5300 50  0001 C CNN
+	1    5700 5300
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5850 3700 6000 3700
+Wire Wire Line
+	6000 3700 6000 5200
+Wire Wire Line
+	6000 5200 5900 5200
+Wire Wire Line
+	5900 5300 6000 5300
+Wire Wire Line
+	6000 5300 6000 5700
+Connection ~ 6000 5700
+Wire Wire Line
+	6000 5700 6250 5700
+$Comp
+L Connector_Generic:Conn_01x02 J1
+U 1 1 5D3273EB
+P 9250 2450
+F 0 "J1" H 9330 2442 50  0000 L CNN
+F 1 "LED" H 9330 2351 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 9250 2450 50  0001 C CNN
+F 3 "~" H 9250 2450 50  0001 C CNN
+	1    9250 2450
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
