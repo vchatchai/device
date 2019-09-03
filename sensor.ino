@@ -59,15 +59,17 @@ void dhtLoop()
     */
     String msg;
     mqtt_client_id = ESP.getChipId();
-    DynamicJsonDocument doc(512);
+    DynamicJsonDocument doc(2024);
 
     JsonObject obj = doc.to<JsonObject>();
 
     obj["NodeID"] = mqtt_client_id;
     obj["Temperature"] = newTemp;
     obj["Humidity"] = newHum;
-    obj["Valve1"] = getCurrentValveStatus1();
-    obj["Valve2"] = getCurrentValveStatus2();
+    obj["RELAY_A"] = getRelayA();
+    obj["RELAY_B"] = getRelayB();
+    // obj["DRIVE_A"] =  getDriveA();
+    // obj["DRIVE_B"] = getDriveB();
     serializeJson(doc, msg);
     Serial.print(" ");
     Serial.print(node_topic);
