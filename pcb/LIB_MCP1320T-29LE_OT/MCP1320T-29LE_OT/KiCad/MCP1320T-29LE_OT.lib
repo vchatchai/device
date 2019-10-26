@@ -1,0 +1,30 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#SamacSys ECAD Model MCP1320T-29LE_OT
+#/158847/189220/2.44/5/3/Integrated Circuit
+DEF MCP1320T-29LE_OT IC 0 30 Y Y 1 F N
+F0 "IC" 950 300 50 H V L CNN
+F1 "MCP1320T-29LE_OT" 950 200 50 H V L CNN
+F2 "SOT95P270X145-5N" 950 100 50 H I L CNN
+F3 "http://docs-emea.rs-online.com/webdocs/0d03/0900766b80d03577.pdf" 950 0 50 H I L CNN
+F4 "Voltage Supervisor 2.90V Act.Low SOT23" 950 -100 50 H I L CNN "Description"
+F5 "1.45" 950 -200 50 H I L CNN "Height"
+F6 "Microchip" 950 -300 50 H I L CNN "Manufacturer_Name"
+F7 "MCP1320T-29LE/OT" 950 -400 50 H I L CNN "Manufacturer_Part_Number"
+F8 "579-MCP1320T-29LE/OT" 950 -500 50 H I L CNN "Mouser Part Number"
+F9 "https://www.mouser.com/Search/Refine.aspx?Keyword=579-MCP1320T-29LE%2FOT" 950 -600 50 H I L CNN "Mouser Price/Stock"
+F10 "7386323" 950 -700 50 H I L CNN "RS Part Number"
+F11 "https://uk.rs-online.com/web/p/products/7386323" 950 -800 50 H I L CNN "RS Price/Stock"
+F12 "70046484" 950 -900 50 H I L CNN "Allied_Number"
+F13 "http://www.alliedelec.com/microchip-technology-inc-mcp1320t-29le-ot/70046484/" 950 -1000 50 H I L CNN "Allied Price/Stock"
+DRAW
+X ~RST 1 0 0 200 R 50 50 0 0 I
+X VSS 2 0 -100 200 R 50 50 0 0 W
+X ~MR 3 0 -200 200 R 50 50 0 0 U
+X WDI 4 1100 0 200 L 50 50 0 0 U
+X VDD 5 1100 -100 200 L 50 50 0 0 W
+P 5 0 1 6 200 100 900 100 900 -300 200 -300 200 100 N
+ENDDRAW
+ENDDEF
+#
+#End Library
