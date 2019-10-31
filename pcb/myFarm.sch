@@ -107,14 +107,14 @@ F 3 "~" H 9250 3500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x06 J5
+L Connector_Generic:Conn_01x08 J5
 U 1 1 5D328442
-P 9250 4600
-F 0 "J5" H 9330 4592 50  0000 L CNN
-F 1 "POWER DRIVE" H 9330 4501 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 9250 4600 50  0001 C CNN
-F 3 "~" H 9250 4600 50  0001 C CNN
-	1    9250 4600
+P 9250 4700
+F 0 "J5" H 9330 4692 50  0000 L CNN
+F 1 "POWER DRIVE" H 9330 4601 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" H 9250 4700 50  0001 C CNN
+F 3 "~" H 9250 4700 50  0001 C CNN
+	1    9250 4700
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -133,7 +133,7 @@ Wire Wire Line
 Wire Wire Line
 	7550 5700 8400 5700
 Wire Wire Line
-	8400 5700 8400 4200
+	8400 5700 8400 5100
 Connection ~ 7550 5700
 Wire Wire Line
 	8650 3400 9050 3400
@@ -571,4 +571,14 @@ F 3 "~" H 9250 2450 50  0001 C CNN
 	1    9250 2450
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	9050 5100 8400 5100
+Connection ~ 8400 5100
+Wire Wire Line
+	8400 5100 8400 4200
+Wire Wire Line
+	8650 3900 8650 5000
+Wire Wire Line
+	8650 5000 9050 5000
+Connection ~ 8650 3900
 $EndSCHEMATC
