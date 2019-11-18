@@ -13,15 +13,15 @@
 #define RELAY_A 0
 #define RELAY_B 1
 
-#define INA_1 3
-#define INA_2 4
-#define INB_1 5
-#define INB_2 6
-#define ENABLE_A 2
-#define ENABLE_B 7
+// #define INA_1 3
+// #define INA_2 4
+// #define INB_1 5
+// #define INB_2 6
+// #define ENABLE_A 2
+// #define ENABLE_B 7
 
 
-#define TYPE 1
+#define TYPE 0
 
 
 int STATUS_DRIVE_A = 0;
@@ -31,26 +31,13 @@ int STATUS_DRIVE_B = 0;
 void valveSetup()
 {
   
-  // All motor control pins are outputs
-  //  pinMode(EnA, OUTPUT);
-  //  pinMode(EnB, OUTPUT);
-  // pinMode(D5, OUTPUT);
-  // pinMode(D6, OUTPUT);
-  // pinMode(D7, OUTPUT);
-  // pinMode(D8, OUTPUT);
-  // pinMode(EN, OUTPUT);
-  // digitalWrite(D5, LOW);
-  // digitalWrite(D6, LOW);
-  // digitalWrite(D7, LOW);
-  // digitalWrite(EN, LOW);
-  // digitalWrite(D8, LOW);
 
-  mcp.pinMode(ENABLE_A, OUTPUT);
-  mcp.pinMode(ENABLE_B, OUTPUT);
-  mcp.pinMode(INA_1, OUTPUT);
-  mcp.pinMode(INA_2, OUTPUT);
-  mcp.pinMode(INB_1, OUTPUT);
-  mcp.pinMode(INB_2, OUTPUT);
+  // mcp.pinMode(ENABLE_A, OUTPUT);
+  // mcp.pinMode(ENABLE_B, OUTPUT);
+  // mcp.pinMode(INA_1, OUTPUT);
+  // mcp.pinMode(INA_2, OUTPUT);
+  // mcp.pinMode(INB_1, OUTPUT);
+  // mcp.pinMode(INB_2, OUTPUT);
   mcp.pinMode(RELAY_A, OUTPUT);
   mcp.pinMode(RELAY_B, OUTPUT);
   valveOff();
@@ -122,151 +109,121 @@ void valveRelayBOff()
 }
 void valveDriverOn()
 {
-  // digitalWrite(EN, HIGH);
-  // // turn on motor A
-  // digitalWrite(D5, HIGH);
-  // digitalWrite(D6, LOW);
-  // // set speed to 150 out 255
-  // //  analogWrite(EnA, 200);
-  // // turn on motor B
-  // digitalWrite(D7, HIGH);
-  // digitalWrite(D8, LOW);
-  // set speed to 150 out 255
-  //  analogWrite(EnB, 200);
-  mcp.digitalWrite(ENABLE_A, HIGH);
-  mcp.digitalWrite(ENABLE_B, HIGH);
-  mcp.digitalWrite(INA_1, HIGH);
-  mcp.digitalWrite(INA_2, LOW);
-  mcp.digitalWrite(INB_1, HIGH);
-  mcp.digitalWrite(INB_2, LOW);
+  
+  // mcp.digitalWrite(ENABLE_A, HIGH);
+  // mcp.digitalWrite(ENABLE_B, HIGH);
+  // mcp.digitalWrite(INA_1, HIGH);
+  // mcp.digitalWrite(INA_2, LOW);
+  // mcp.digitalWrite(INB_1, HIGH);
+  // mcp.digitalWrite(INB_2, LOW);
+ valveRelayBOn();
+ valveRelayAOn();
+
 
   delay(1000);
-  mcp.digitalWrite(ENABLE_A, LOW);
-  mcp.digitalWrite(ENABLE_B, LOW);
-  mcp.digitalWrite(INA_1, LOW);
-  mcp.digitalWrite(INA_2, LOW);
-  mcp.digitalWrite(INB_1, LOW);
-  mcp.digitalWrite(INB_2, LOW);
-
-  // now turn off motors
-  // digitalWrite(D5, LOW);
-  // digitalWrite(D6, LOW);
-  // digitalWrite(D7, LOW);
-  // digitalWrite(D8, LOW);
+  // mcp.digitalWrite(ENABLE_A, LOW);
+  // mcp.digitalWrite(ENABLE_B, LOW);
+  // mcp.digitalWrite(INA_1, LOW);
+  // mcp.digitalWrite(INA_2, LOW);
+  // mcp.digitalWrite(INB_1, LOW);
+  // mcp.digitalWrite(INB_2, LOW);
 
 
-  // digitalWrite(EN, LOW);
+ valveRelayBOff();
+ valveRelayAOff();
 
-  //LED_STATUS ON
-  // ledState = 1;
-  // digitalWrite(LED_STATUS, !ledState);
   ledStatusSwitchON();
   Serial.print("Valve Driver On");
 }
 
-void valveDriverAOn()
-{ 
-  mcp.digitalWrite(ENABLE_A, HIGH); 
-  mcp.digitalWrite(INA_1, HIGH);
-  mcp.digitalWrite(INA_2, LOW); 
+// void valveDriverAOn()
+// { 
+//   // mcp.digitalWrite(ENABLE_A, HIGH); 
+//   // mcp.digitalWrite(INA_1, HIGH);
+//   // mcp.digitalWrite(INA_2, LOW); 
 
-  delay(1000);
-  mcp.digitalWrite(ENABLE_A, LOW); 
-  mcp.digitalWrite(INA_1, LOW);
-  mcp.digitalWrite(INA_2, LOW); 
+//   delay(1000);
+//   // mcp.digitalWrite(ENABLE_A, LOW); 
+//   // mcp.digitalWrite(INA_1, LOW);
+//   // mcp.digitalWrite(INA_2, LOW); 
  
-  STATUS_DRIVE_A = ON;
-  ledStatusSwitchON();
-  Serial.print("Valve Driver On");
-}
-void valveDriverBOn()
-{  
-  mcp.digitalWrite(ENABLE_B, HIGH); 
-  mcp.digitalWrite(INB_1, HIGH);
-  mcp.digitalWrite(INB_2, LOW);
+//   STATUS_DRIVE_A = ON;
+//   ledStatusSwitchON();
+//   Serial.print("Valve Driver On");
+// }
+// void valveDriverBOn()
+// {  
+//   // mcp.digitalWrite(ENABLE_B, HIGH); 
+//   // mcp.digitalWrite(INB_1, HIGH);
+//   // mcp.digitalWrite(INB_2, LOW);
 
-  delay(1000); 
-  mcp.digitalWrite(ENABLE_B, LOW); 
-  mcp.digitalWrite(INB_1, LOW);
-  mcp.digitalWrite(INB_2, LOW);
+//   delay(1000); 
+//   // mcp.digitalWrite(ENABLE_B, LOW); 
+//   // mcp.digitalWrite(INB_1, LOW);
+//   // mcp.digitalWrite(INB_2, LOW);
  
-  STATUS_DRIVE_B = ON; 
-  ledStatusSwitchON();
-  Serial.print("Valve Driver On");
-}
+//   STATUS_DRIVE_B = ON; 
+//   ledStatusSwitchON();
+//   Serial.print("Valve Driver On");
+// }
 void valveDriverOff()
 {
-  //  digitalWrite(EN, HIGH);
-  // // turn on motor A
-  // digitalWrite(D5, LOW);
-  // digitalWrite(D6, HIGH);
-  // // set speed to 150 out 255
-  // //  analogWrite(EnA, 200);
-  // // turn on motor B
-  // digitalWrite(D7, LOW);
-  // digitalWrite(D8, HIGH);
-  // set speed to 150 out 255
-  //  analogWrite(EnB, 200);
   
-  // delay(1000);
-  // // now turn off motors
-  // digitalWrite(D5, LOW);
-  // digitalWrite(D6, LOW);
-  // digitalWrite(D7, LOW);
-  // digitalWrite(D8, LOW);
-
-
-  // digitalWrite(EN, LOW);
-  mcp.digitalWrite(ENABLE_A, HIGH);
-  mcp.digitalWrite(ENABLE_B, HIGH);
-  mcp.digitalWrite(INA_1, LOW);
-  mcp.digitalWrite(INA_2, HIGH);
-  mcp.digitalWrite(INB_1, LOW);
-  mcp.digitalWrite(INB_2, HIGH);
+  // mcp.digitalWrite(ENABLE_A, HIGH);
+  // mcp.digitalWrite(ENABLE_B, HIGH);
+  // mcp.digitalWrite(INA_1, LOW);
+  // mcp.digitalWrite(INA_2, HIGH);
+  // mcp.digitalWrite(INB_1, LOW);
+  // mcp.digitalWrite(INB_2, HIGH);
+ valveRelayBOn();
+ valveRelayAOff();
 
   delay(1000);
-  mcp.digitalWrite(ENABLE_A, LOW);
-  mcp.digitalWrite(ENABLE_B, LOW);
-  mcp.digitalWrite(INA_1, LOW);
-  mcp.digitalWrite(INA_2, LOW);
-  mcp.digitalWrite(INB_1, LOW);
-  mcp.digitalWrite(INB_2, LOW);
+
+  //  valveRelayBOff();
+ valveRelayAOff();
+  // mcp.digitalWrite(ENABLE_A, LOW);
+  // mcp.digitalWrite(ENABLE_B, LOW);
+  // mcp.digitalWrite(INA_1, LOW);
+  // mcp.digitalWrite(INA_2, LOW);
+  // mcp.digitalWrite(INB_1, LOW);
+  // mcp.digitalWrite(INB_2, LOW);
   //LED_STATUS OFF
   // ledState = 0;
   // digitalWrite(LED_STATUS, !ledState);
   ledStatusSwitchOFF();
   Serial.print("Valve Driver Off");
 }
+// 
+// void valveDriverAOff()
+// {  
+//   // mcp.digitalWrite(ENABLE_A, HIGH); 
+//   // mcp.digitalWrite(INA_1, LOW);
+//   // mcp.digitalWrite(INA_2, HIGH); 
 
-void valveDriverAOff()
-{  
-  mcp.digitalWrite(ENABLE_A, HIGH); 
-  mcp.digitalWrite(INA_1, LOW);
-  mcp.digitalWrite(INA_2, HIGH); 
+//   delay(1000);
+//   // mcp.digitalWrite(ENABLE_A, LOW); 
+//   // mcp.digitalWrite(INA_1, LOW);
+//   // mcp.digitalWrite(INA_2, LOW);  
+//   STATUS_DRIVE_A  = OFF;
+//   ledStatusSwitchOFF();
+//   Serial.print("Valve Driver Off");
+// }
 
-  delay(1000);
-  mcp.digitalWrite(ENABLE_A, LOW); 
-  mcp.digitalWrite(INA_1, LOW);
-  mcp.digitalWrite(INA_2, LOW);  
-  STATUS_DRIVE_A  = OFF;
-  ledStatusSwitchOFF();
-  Serial.print("Valve Driver Off");
-}
+// void valveDriverBOff()
+// {  
+//   // mcp.digitalWrite(ENABLE_B, HIGH); 
+//   // mcp.digitalWrite(INB_1, LOW);
+//   // mcp.digitalWrite(INB_2, HIGH);
 
-void valveDriverBOff()
-{  
-  mcp.digitalWrite(ENABLE_B, HIGH); 
-  mcp.digitalWrite(INB_1, LOW);
-  mcp.digitalWrite(INB_2, HIGH);
-
-  delay(1000); 
-  mcp.digitalWrite(ENABLE_B, LOW); 
-  mcp.digitalWrite(INB_1, LOW);
-  mcp.digitalWrite(INB_2, LOW); 
-  ledStatusSwitchOFF();
-  STATUS_DRIVE_B = OFF;
-  Serial.print("Valve Driver Off");
-}
+//   delay(1000); 
+//   // mcp.digitalWrite(ENABLE_B, LOW); 
+//   // mcp.digitalWrite(INB_1, LOW);
+//   // mcp.digitalWrite(INB_2, LOW); 
+//   ledStatusSwitchOFF();
+//   STATUS_DRIVE_B = OFF;
+//   Serial.print("Valve Driver Off");
+// }
 
 void valveOn()
 {

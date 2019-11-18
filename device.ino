@@ -57,6 +57,8 @@ String pump_topic = farm + "/pump/";
 // #define LED_POWER 2
 #define LED_POWER_ON LOW
 #define LED_POWER_OFF HIGH
+// #define MQTT_MAX_PACKET_SIZE 512
+
 
 // #define D8  15
 // #define D7  13
@@ -89,10 +91,25 @@ Ticker watchdog;
 
 int count = 0;
 
+bool connected = false;
+bool watchdogtriger = false;
+
 void watchdogTicker() {
- 
-  digitalWrite(D6, count);   // turn the LED on (HIGH is the voltage level)
-  count = !count;
+  if(connected){
+    watchdogtriger = !watchdogtriger;
+  }else{
+    if(count < 3000){
+      count++;
+      watchdogtriger = !watchdogtriger;
+
+    }
+  }
+  
+  
+  digitalWrite(D6, watchdogtriger);   // turn the LED on (HIGH is the voltage level)
+    
+
+
 }
 
 
@@ -135,11 +152,13 @@ void setup() {
   Serial.println("Mounting FS...");
 
 
+  connected = true;
+
 
 }
 
 void loop() {
- 
+  connected = WiFi.status() == WL_CONNECTED;
 //  valveOn();
  
   ArduinoOTA.handle();

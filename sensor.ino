@@ -59,7 +59,7 @@ void dhtLoop()
     */
     String msg;
     mqtt_client_id = ESP.getChipId();
-    DynamicJsonDocument doc(2024);
+    DynamicJsonDocument doc(4048);
 
     JsonObject obj = doc.to<JsonObject>();
 
@@ -68,12 +68,15 @@ void dhtLoop()
     obj["Humidity"] = newHum;
     obj["RELAY_A"] = getRelayA();
     obj["RELAY_B"] = getRelayB();
+    obj["FLOAT_SWITCH_IN"] = floatSwitchValueIn();
+    // obj["FLOAT_SWITCH_OUT"] = floatSwitchValueOut();
     // obj["DRIVE_A"] =  getDriveA();
     // obj["DRIVE_B"] = getDriveB();
     serializeJson(doc, msg);
-    Serial.print(" ");
+    Serial.print("MQTT_MAX_PACKET_SIZE: ");
+    Serial.println(MQTT_MAX_PACKET_SIZE);
     Serial.print(node_topic);
     Serial.println(" " + msg);
-    mqtt_client.publish((node_topic).c_str(), msg.c_str(), true);
+    mqtt_client.publish((node_topic).c_str(), msg.c_str());
   }
 }

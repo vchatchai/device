@@ -1,7 +1,6 @@
 #include <PubSubClient.h> //For MQTT
 
 
-
 //MQTT client
 WiFiClient espClient;
 PubSubClient mqtt_client(espClient);
