@@ -36,9 +36,9 @@ F 3 "https://wiki.wemos.cc/products:d1:d1_mini#documentation" H 3600 2550 50  00
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5850 3400 6600 3400
+	5850 3400 6050 3400
 Wire Wire Line
-	5850 3500 6400 3500
+	5850 3500 6150 3500
 Wire Wire Line
 	6400 3500 6400 3300
 Wire Wire Line
@@ -342,7 +342,7 @@ Connection ~ 4050 2550
 Wire Wire Line
 	4050 2550 4250 2550
 Wire Wire Line
-	2300 1700 2300 3950
+	2300 1700 2300 2450
 Wire Wire Line
 	2850 3750 2850 2550
 Wire Wire Line
@@ -381,10 +381,6 @@ Wire Wire Line
 	2750 3950 2950 3950
 Wire Wire Line
 	4750 3600 5050 3600
-Wire Wire Line
-	4750 2150 4750 3600
-Wire Wire Line
-	4650 2150 4650 3700
 Wire Wire Line
 	4650 3700 5050 3700
 Wire Wire Line
@@ -522,8 +518,6 @@ Wire Wire Line
 	6550 2550 6750 2550
 Wire Wire Line
 	5850 3600 6350 3600
-Wire Wire Line
-	4250 2550 5550 2550
 $Comp
 L Connector_Generic:Conn_01x02 J15
 U 1 1 5D75F2CC
@@ -570,14 +564,106 @@ Wire Wire Line
 	8650 5000 9050 5000
 Connection ~ 8650 3900
 $Comp
-L Connector_Generic:Conn_01x02 J11
+L Connector_Generic:Conn_01x04 J17
+U 1 1 5E041AC0
+P 5600 1600
+F 0 "J17" V 5564 1412 50  0000 C CNN
+F 1 "Conn_01x02" V 5473 1412 50  0000 C CNN
+F 2 "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical" H 5600 1600 50  0001 C CNN
+F 3 "~" H 5600 1600 50  0001 C CNN
+	1    5600 1600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5600 1800 5600 2000
+Wire Wire Line
+	5600 2350 6050 2350
+Wire Wire Line
+	6050 2350 6050 3400
+Connection ~ 6050 3400
+Wire Wire Line
+	6050 3400 6600 3400
+Wire Wire Line
+	5700 1800 5700 1900
+Wire Wire Line
+	5700 2250 6150 2250
+Wire Wire Line
+	6150 2250 6150 3500
+Connection ~ 6150 3500
+Wire Wire Line
+	6150 3500 6400 3500
+$Comp
+L Connector_Generic:Conn_01x04 J16
+U 1 1 5E05D9D5
+P 5150 1600
+F 0 "J16" V 5114 1312 50  0000 R CNN
+F 1 "Conn_01x02" V 5023 1312 50  0000 R CNN
+F 2 "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical" H 5150 1600 50  0001 C CNN
+F 3 "~" H 5150 1600 50  0001 C CNN
+	1    5150 1600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5250 1800 5250 1900
+Wire Wire Line
+	5250 1900 5700 1900
+Connection ~ 5700 1900
+Wire Wire Line
+	5700 1900 5700 2250
+Wire Wire Line
+	5150 1800 5150 2000
+Wire Wire Line
+	5150 2000 5600 2000
+Connection ~ 5600 2000
+Wire Wire Line
+	5600 2000 5600 2350
+$Comp
+L Connector_Generic:Conn_01x04 J11
 U 1 1 5D80D919
 P 4650 1950
 F 0 "J11" H 4568 1625 50  0000 C CNN
 F 1 "RXTX" H 4568 1716 50  0000 C CNN
-F 2 "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical" H 4650 1950 50  0001 C CNN
+F 2 "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical" H 4650 1950 50  0001 C CNN
 F 3 "~" H 4650 1950 50  0001 C CNN
 	1    4650 1950
 	0    -1   -1   0   
 $EndComp
+Wire Wire Line
+	4650 2150 4650 3700
+Wire Wire Line
+	4750 2150 4750 3600
+Wire Wire Line
+	5050 1800 5050 2550
+Connection ~ 5050 2550
+Wire Wire Line
+	5050 2550 5500 2550
+Wire Wire Line
+	5500 1800 5500 2550
+Connection ~ 5500 2550
+Wire Wire Line
+	5500 2550 5550 2550
+Wire Wire Line
+	5800 1800 5800 2450
+Connection ~ 2300 2450
+Wire Wire Line
+	2300 2450 2300 3950
+Connection ~ 5350 2450
+Wire Wire Line
+	5350 2450 5800 2450
+Wire Wire Line
+	5350 1800 5350 2450
+Wire Wire Line
+	4250 2550 4550 2550
+Wire Wire Line
+	2300 2450 4850 2450
+Wire Wire Line
+	4550 2150 4550 2550
+Connection ~ 4550 2550
+Wire Wire Line
+	4550 2550 5050 2550
+Wire Wire Line
+	4850 2150 4850 2450
+Connection ~ 4850 2450
+Wire Wire Line
+	4850 2450 5350 2450
 $EndSCHEMATC
