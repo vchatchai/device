@@ -1,4 +1,6 @@
 
+
+#include <PubSubClient.h>
  
 #include <TransmissionResult.h>
 #include <NetworkInfo.h>
@@ -57,7 +59,6 @@ String pump_topic = farm + "/pump/";
 // #define LED_POWER 2
 #define LED_POWER_ON LOW
 #define LED_POWER_OFF HIGH
-// #define MQTT_MAX_PACKET_SIZE 512
 
 
 // #define D8  15
