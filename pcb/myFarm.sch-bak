@@ -136,9 +136,6 @@ Wire Wire Line
 Connection ~ 7550 5700
 Wire Wire Line
 	8650 3400 9050 3400
-Wire Wire Line
-	9050 3700 8400 3700
-Connection ~ 8400 3700
 $Comp
 L Connector_Generic:Conn_01x04 J4
 U 1 1 5D33CAF7
@@ -176,12 +173,6 @@ Wire Wire Line
 	8000 4900 9050 4900
 Connection ~ 5550 2550
 Wire Wire Line
-	8000 3600 8350 3600
-Wire Wire Line
-	8350 3600 8350 3500
-Wire Wire Line
-	8350 3500 9050 3500
-Wire Wire Line
 	8000 3500 8250 3500
 Wire Wire Line
 	8250 3500 8250 3550
@@ -207,7 +198,7 @@ Wire Wire Line
 Wire Wire Line
 	3300 1650 3300 1700
 Wire Wire Line
-	3200 1850 3200 1650
+	3200 1850 3200 1800
 $Comp
 L Connector_Generic:Conn_01x04 J7
 U 1 1 5D3E2091
@@ -242,7 +233,7 @@ Wire Wire Line
 	2850 2550 4050 2550
 Connection ~ 4250 2550
 Wire Wire Line
-	3300 1700 2300 1700
+	3300 1700 2750 1700
 Wire Wire Line
 	2300 3950 2550 3950
 Connection ~ 3300 1700
@@ -298,8 +289,6 @@ Wire Wire Line
 	6750 2550 7300 2550
 Wire Wire Line
 	6950 1800 6950 2200
-Wire Wire Line
-	6950 2200 8400 2200
 Wire Wire Line
 	5550 2550 6400 2550
 Wire Wire Line
@@ -385,8 +374,6 @@ Wire Wire Line
 	4650 3700 5050 3700
 Wire Wire Line
 	8650 2450 8650 3400
-Wire Wire Line
-	8400 2200 8400 3700
 $Comp
 L Connector_Generic:Conn_01x03 J2
 U 1 1 5D32579D
@@ -465,8 +452,6 @@ Wire Wire Line
 Wire Wire Line
 	8300 2000 8300 1800
 Wire Wire Line
-	8150 2000 8150 3900
-Wire Wire Line
 	8200 2100 8600 2100
 Wire Wire Line
 	8600 2100 8600 1800
@@ -478,9 +463,6 @@ Wire Wire Line
 	7800 1950 8100 1950
 Wire Wire Line
 	8700 1950 8700 2200
-Wire Wire Line
-	8700 2200 8400 2200
-Connection ~ 8400 2200
 Wire Wire Line
 	8700 1800 8700 1950
 Connection ~ 8700 1950
@@ -518,8 +500,6 @@ Wire Wire Line
 	6550 2550 6750 2550
 Wire Wire Line
 	5850 3600 6350 3600
-Wire Wire Line
-	4250 2550 4550 2550
 $Comp
 L Connector_Generic:Conn_01x02 J15
 U 1 1 5D75F2CC
@@ -635,11 +615,6 @@ Wire Wire Line
 Wire Wire Line
 	4750 2150 4750 3600
 Wire Wire Line
-	4550 2150 4550 2550
-Connection ~ 4550 2550
-Wire Wire Line
-	4550 2550 5050 2550
-Wire Wire Line
 	5050 1800 5050 2550
 Connection ~ 5050 2550
 Wire Wire Line
@@ -654,16 +629,130 @@ Wire Wire Line
 Connection ~ 2300 2450
 Wire Wire Line
 	2300 2450 2300 3950
-Wire Wire Line
-	2300 2450 4850 2450
 Connection ~ 5350 2450
 Wire Wire Line
 	5350 2450 5800 2450
 Wire Wire Line
 	5350 1800 5350 2450
+Wire Wire Line
+	4250 2550 4550 2550
+Wire Wire Line
+	2300 2450 4850 2450
+Wire Wire Line
+	4550 2150 4550 2550
+Connection ~ 4550 2550
+Wire Wire Line
+	4550 2550 5050 2550
+Wire Wire Line
+	4850 2150 4850 2450
 Connection ~ 4850 2450
 Wire Wire Line
 	4850 2450 5350 2450
+$Comp
+L TA6586:TA6586 U4
+U 1 1 5E2B7543
+P 10050 3000
+F 0 "U4" H 10050 3681 50  0000 C CNN
+F 1 "TA6586" H 10050 3590 50  0000 C CNN
+F 2 "Package_DIP:DIP-8_W10.16mm" H 10050 3300 50  0001 C CNN
+F 3 "" H 10050 3300 50  0001 C CNN
+	1    10050 3000
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	4850 2150 4850 2450
+	8300 4000 8300 2800
+Wire Wire Line
+	8300 2800 9700 2800
+Connection ~ 8300 4000
+Connection ~ 8400 2200
+Wire Wire Line
+	6950 2200 8400 2200
+Connection ~ 8400 3700
+Wire Wire Line
+	9050 3700 8400 3700
+Wire Wire Line
+	8700 2200 8400 2200
+Wire Wire Line
+	8150 2000 8150 3900
+Wire Wire Line
+	8400 2200 8400 3700
+Wire Wire Line
+	8600 3600 8600 3500
+Wire Wire Line
+	8000 3600 8600 3600
+Wire Wire Line
+	8600 3500 9050 3500
+Wire Wire Line
+	8350 4100 8350 3250
+Wire Wire Line
+	8350 3250 9700 3250
+Connection ~ 8350 4100
+Wire Wire Line
+	10050 5700 10050 3550
+Wire Wire Line
+	8400 5700 10050 5700
+Connection ~ 8400 5700
+Wire Wire Line
+	8650 2450 8650 2300
+$Comp
+L Connector_Generic:Conn_01x02 J18
+U 1 1 5E375647
+P 10850 2950
+F 0 "J18" H 10930 2942 50  0000 L CNN
+F 1 "LED" H 10930 2851 50  0000 L CNN
+F 2 "Connector_Wire:SolderWirePad_1x02_P7.62mm_Drill2.5mm" H 10850 2950 50  0001 C CNN
+F 3 "~" H 10850 2950 50  0001 C CNN
+	1    10850 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10650 3050 10650 3150
+Wire Wire Line
+	10650 3250 10400 3250
+Wire Wire Line
+	10400 3150 10650 3150
+Connection ~ 10650 3150
+Wire Wire Line
+	10650 3150 10650 3250
+Wire Wire Line
+	10400 2800 10650 2800
+Wire Wire Line
+	10650 2800 10650 2900
+Wire Wire Line
+	10400 2900 10650 2900
+Connection ~ 10650 2900
+Wire Wire Line
+	10650 2900 10650 2950
+$Comp
+L Connector_Generic:Conn_01x02 J19
+U 1 1 5E3BCE7F
+P 2650 1450
+F 0 "J19" V 2614 1262 50  0000 R CNN
+F 1 "POWER" V 2523 1262 50  0000 R CNN
+F 2 "Connector_Wire:SolderWirePad_1x02_P7.62mm_Drill2.5mm" H 2650 1450 50  0001 C CNN
+F 3 "~" H 2650 1450 50  0001 C CNN
+	1    2650 1450
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2650 1650 2650 1800
+Wire Wire Line
+	2650 1800 3200 1800
+Connection ~ 3200 1800
+Wire Wire Line
+	3200 1800 3200 1650
+Wire Wire Line
+	2750 1650 2750 1700
+Connection ~ 2750 1700
+Wire Wire Line
+	2750 1700 2300 1700
+Wire Wire Line
+	2650 1800 2450 1800
+Wire Wire Line
+	2450 1800 2450 800 
+Wire Wire Line
+	2450 800  10050 800 
+Wire Wire Line
+	10050 800  10050 2500
+Connection ~ 2650 1800
 $EndSCHEMATC
