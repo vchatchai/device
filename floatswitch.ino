@@ -1,6 +1,6 @@
 
 
-#define FLOAT_SWITCH_PORT  12
+
 
 void floatSwitchSetup()
 {
@@ -9,17 +9,17 @@ void floatSwitchSetup()
 
 int floatSwitchValueIn()
 {
-    // int value = mcp.digitalRead(FLOAT_SWITCH_PORT);
+    int value = mcp.digitalRead(FLOAT_SWITCH_PORT_IN);
 
     // return value;
-    return 0;
+    return value;
 }
 
 
 int floatSwitchValueOut()
 {
-    // int value = mcp.digitalRead(FLOAT_SWITCH_PORT);
+    int value = mcp.digitalRead(FLOAT_SWITCH_PORT_OUT);
 
-    // return value;
-    return 1;
+    return value;
+    // return 1;
 }

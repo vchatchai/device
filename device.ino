@@ -117,7 +117,7 @@ void watchdogTicker() {
 void setup() {
 
   pinMode(D6, OUTPUT);
-  watchdog.attach(0.3, watchdogTicker);
+  watchdog.attach(0.2, watchdogTicker);
   Serial.begin(115200);
   Serial.println("\r\nBooting...");
   expenderSetup();

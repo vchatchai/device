@@ -114,6 +114,7 @@ void valveOn()
   mcp.digitalWrite(VALVE_A2, OFF);
   mcp.digitalWrite(VALVE_B1, OFF);
   mcp.digitalWrite(VALVE_B2, OFF);
+
   ledStatusSwitchON();
   
 }

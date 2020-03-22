@@ -2,11 +2,17 @@
 #define LED_STATUS_SWITCH_OFF HIGH
 
 void ledStatusSwitchON(){
-    mcp.digitalWrite(LED_STATUS_SWITCH, LED_STATUS_SWITCH_ON);
+
+  STATUS_DRIVE_A = 1;
+  STATUS_DRIVE_B = 1; 
+  mcp.digitalWrite(LED_STATUS_SWITCH, LED_STATUS_SWITCH_ON);
 }
 
 void ledStatusSwitchOFF(){
-    mcp.digitalWrite(LED_STATUS_SWITCH, LED_STATUS_SWITCH_OFF);
+
+  STATUS_DRIVE_A = 0;
+  STATUS_DRIVE_B = 0; 
+  mcp.digitalWrite(LED_STATUS_SWITCH, LED_STATUS_SWITCH_OFF);
 
 }
 

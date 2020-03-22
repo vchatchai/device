@@ -3,14 +3,17 @@
 
 Adafruit_MCP23017 mcp;
 
-#define LED_STATUS_SWITCH  10
 
 #define LED_STATUS_NETWORK  8
 
 
-#define PUSH_BUTTON  11
+// #define LED_STATUS_SWITCH  10
+// #define PUSH_BUTTON  11
+#define FLOAT_SWITCH_PORT_IN  13
+#define FLOAT_SWITCH_PORT_OUT  15
 
-
+#define LED_STATUS_SWITCH  11
+#define PUSH_BUTTON  10
 #define RESET_PIN 0
   
 void expenderSetup() {  
@@ -35,6 +38,12 @@ void expenderSetup() {
   //  mcp.pinMode(PUSH_BUTTON, INPUT);  
   // mcp.pullUp(PUSH_BUTTON, HIGH);  // turn on a 100K pullup internally
 
+
+  mcp.pinMode(FLOAT_SWITCH_PORT_IN, INPUT);  
+  mcp.pullUp(FLOAT_SWITCH_PORT_IN, HIGH);  
+
+  mcp.pinMode(FLOAT_SWITCH_PORT_OUT, INPUT);  
+  mcp.pullUp(FLOAT_SWITCH_PORT_OUT, HIGH);  
 
   Serial.println("\r\expenderSetup....finish.");
 
