@@ -1,4 +1,4 @@
-update=อ. 30 ก.ค. 2562, 07:02:48
+update=พฤ.  9 เม.ย. 2563, 21:54:55
 version=1
 last_client=kicad
 [general]
@@ -63,7 +63,7 @@ SolderPasteClearance=0
 SolderPasteRatio=-0
 [pcbnew/Layer.F.Cu]
 Name=F.Cu
-Type=0
+Type=3
 Enabled=1
 [pcbnew/Layer.In1.Cu]
 Name=In1.Cu
@@ -232,6 +232,17 @@ Enabled=0
 Name=Default
 Clearance=0.2
 TrackWidth=0.25
+ViaDiameter=0.8
+ViaDrill=0.4
+uViaDiameter=0.3
+uViaDrill=0.1
+dPairWidth=0.2
+dPairGap=0.25
+dPairViaGap=0.25
+[pcbnew/Netclasses/1]
+Name=3.3v
+Clearance=0.2
+TrackWidth=1
 ViaDiameter=0.8
 ViaDrill=0.4
 uViaDiameter=0.3
