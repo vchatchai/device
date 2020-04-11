@@ -105,6 +105,24 @@ void valveSetup()
 
 void valveOn()
 {
+  mcp.digitalWrite(VALVE_A1, OFF);
+  mcp.digitalWrite(VALVE_A2, ON);
+  mcp.digitalWrite(VALVE_B1, OFF);
+  mcp.digitalWrite(VALVE_B2, ON);
+  delay(DELAY); 
+  mcp.digitalWrite(VALVE_A1, OFF);
+  mcp.digitalWrite(VALVE_A2, OFF);
+  mcp.digitalWrite(VALVE_B1, OFF);
+  mcp.digitalWrite(VALVE_B2, OFF);
+
+  STATUS_DRIVE_A = 1;
+  STATUS_DRIVE_B = 1; 
+  ledStatusSwitchON();
+  
+}
+
+void valveOff()
+{
   mcp.digitalWrite(VALVE_A1, ON);
   mcp.digitalWrite(VALVE_A2, OFF);
   mcp.digitalWrite(VALVE_B1, ON);
@@ -115,21 +133,8 @@ void valveOn()
   mcp.digitalWrite(VALVE_B1, OFF);
   mcp.digitalWrite(VALVE_B2, OFF);
 
-  ledStatusSwitchON();
-  
-}
-
-void valveOff()
-{
-  mcp.digitalWrite(VALVE_A1, OFF);
-  mcp.digitalWrite(VALVE_A2, ON);
-  mcp.digitalWrite(VALVE_B1, OFF);
-  mcp.digitalWrite(VALVE_B2, ON);
-  delay(DELAY); 
-  mcp.digitalWrite(VALVE_A1, OFF);
-  mcp.digitalWrite(VALVE_A2, OFF);
-  mcp.digitalWrite(VALVE_B1, OFF);
-  mcp.digitalWrite(VALVE_B2, OFF);
+  STATUS_DRIVE_A = 0;
+  STATUS_DRIVE_B = 0; 
   ledStatusSwitchOFF();
 }
 

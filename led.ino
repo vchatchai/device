@@ -3,15 +3,13 @@
 
 void ledStatusSwitchON(){
 
-  STATUS_DRIVE_A = 1;
-  STATUS_DRIVE_B = 1; 
+
   mcp.digitalWrite(LED_STATUS_SWITCH, LED_STATUS_SWITCH_ON);
 }
 
 void ledStatusSwitchOFF(){
 
-  STATUS_DRIVE_A = 0;
-  STATUS_DRIVE_B = 0; 
+
   mcp.digitalWrite(LED_STATUS_SWITCH, LED_STATUS_SWITCH_OFF);
 
 }
