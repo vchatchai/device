@@ -66,8 +66,8 @@ void dhtLoop()
     obj["NodeID"] = mqtt_client_id;
     obj["Temperature"] = newTemp;
     obj["Humidity"] = newHum;
-    obj["RELAY_A"] = getDriveA();
-    obj["RELAY_B"] = getDriveB();
+    
+    obj["SWITCH"] = switchStatus();
     obj["FLOAT_SWITCH_IN"] = floatSwitchValueIn();
     obj["FLOAT_SWITCH_OUT"] = floatSwitchValueOut();
     // obj["DRIVE_A"] =  getDriveA();

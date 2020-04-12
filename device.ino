@@ -15,6 +15,9 @@
 #include <ArduinoOTA.h>   //For OTA
 //for LED status
 #include <Ticker.h>
+#include <Adafruit_MCP23017.h>
+
+Adafruit_MCP23017 mcp;
 
 struct Config {
   char name;
@@ -67,6 +70,43 @@ String pump_topic = farm + "/pump/";
 // #define D5  14
 // #define EN   16
 
+#define LED_STATUS_NETWORK 8
+
+// #define LED_STATUS_SWITCH  10
+// #define PUSH_BUTTON  11
+#define FLOAT_SWITCH_PORT_IN 13
+#define FLOAT_SWITCH_PORT_OUT 15
+
+#define LED_STATUS_SWITCH 11
+#define PUSH_BUTTON 10
+#define RESET_PIN 0
+
+#define RELAY_A 0  
+#define RELAY_B 2
+
+
+#define DEVICE_TYPE_PIN_0 12
+#define DEVICE_TYPE_PIN_1 D0
+#define DEVICE_TYPE_PIN_2 D7
+
+#define DEVICE_RELAY 0
+#define DEVICE_PLUSE_SWICTH 1
+
+/*
+CONFIG_1 = 0 RELAY
+CONFIG_1 = 1 PLUSE SWITCH
+
+
+
+
+
+*/
+int CONFIG_1 = 0;
+int CONFIG_2 = 0;
+int CONFIG_3 = 0;
+int DEVICE_TYPE = 0 ;
+int SWITCH_STATUS = 0;
+
 
 
 Ticker statusTicker;
@@ -117,7 +157,7 @@ void watchdogTicker() {
 void setup() {
 
   pinMode(D6, OUTPUT);
-  watchdog.attach(0.3, watchdogTicker);
+  watchdog.attach(0.2, watchdogTicker);
   Serial.begin(115200);
   Serial.println("\r\nBooting...");
   expenderSetup();

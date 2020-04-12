@@ -96,9 +96,9 @@ void callback(String topic, byte* message, unsigned int length) {
     powerTicker.detach();
     Serial.print("Changing Valve to ");
     if (messageTemp == "1") {
-      valveOn();
+      switchON();
     } else if (messageTemp == "0") {
-      valveOff();
+      switchOFF();
     }
   }else if (topic == pump_topic ) {
     powerTicker.detach();
