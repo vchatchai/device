@@ -20,13 +20,13 @@
 Adafruit_MCP23017 mcp;
 
 struct Config {
-  char name;
+  char *name;
   int port;
   char *config_wifi_ssid;
   char *config_wifi_password ;
 
   char *config_mqtt_server ;
-  int config_mqtt_port ;
+  char *config_mqtt_port ;
   char *config_mqtt_user;
   char *config_mqtt_password ;
 };
@@ -82,7 +82,7 @@ String pump_topic = farm + "/pump/";
 #define RESET_PIN 0
 
 #define RELAY_A 0  
-#define RELAY_B 2
+#define RELAY_B 1
 
 
 #define DEVICE_TYPE_PIN_0 12

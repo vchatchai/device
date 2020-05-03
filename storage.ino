@@ -38,19 +38,32 @@ void loadConfiguration() {
     Serial.println(F("Failed to read file, using default configuration"));
 
  
-  Serial.println( doc["hostname"].as<const char*>());
-  Serial.println( doc["port"].as<const char*>());
+  // Serial.println( doc["hostname"].as<const char*>());
+  // Serial.println( doc["port"].as<const char*>());
 
   
-    //WIFI configuration
-  config.config_wifi_ssid =  "Home";
-  config.config_wifi_password = "manager1";
+//     //WIFI configuration
+//   config.config_wifi_ssid =  "Home";
+//   config.config_wifi_password = "manager1";
+
+// //MQTT configuration
+// char str_array[mqtt_client_id.length()];
+// mqtt_client_id.toCharArray(str_array, mqtt_client_id.length());
+// // char* token = strtok(mqtt_client_id, " ");
+
+
+//  config.config_mqtt_server = doc["mqtt_server"];
+//  config.config_mqtt_port = doc["mqtt_port"];
+//  config.config_mqtt_user = doc["mqtt_user"];
+//  config.config_mqtt_password = doc["mqtt_password"];
+//  config.name = doc["name"];
 
 //MQTT configuration
- config.config_mqtt_server = "m11.cloudmqtt.com";
- config.config_mqtt_port = 11621;
- config.config_mqtt_user = "kysbvegn";
- config.config_mqtt_password = "Ww2mmbIEU9_e";
+ config.config_mqtt_server = "192.168.0.10";
+ config.config_mqtt_port = "1883";
+ config.config_mqtt_user = "";
+ config.config_mqtt_password = "";
+ config.name = "Motor2";
 
      //WIFI configuration
 /*
@@ -76,13 +89,26 @@ void loadConfiguration() {
 
 */
  
-  // config.config_mqtt_port = doc["port"] | 11621;
-  // strlcpy(config.config_mqtt_server,doc["mqtt_server"] | "m11.cloudmqtt.com",  sizeof(config.config_mqtt_server));         
-  // strlcpy(config.config_mqtt_user,doc["mqtt_user"] | "Ww2mmbIEU9_e",  sizeof(config.config_mqtt_user)); 
-  // strlcpy(config.config_mqtt_password,doc["mqtt_password"] | "kysbvegn",  sizeof(config.config_mqtt_password)); 
+  // strlcpy(config.config_mqtt_port, doc["mqtt_port"] , sizeof(config.config_mqtt_port));
+  // strlcpy(config.config_mqtt_server,doc["mqtt_server"] ,  sizeof(config.config_mqtt_server));         
+  // strlcpy(config.config_mqtt_user,doc["mqtt_user"] ,  sizeof(config.config_mqtt_user)); 
+  // strlcpy(config.config_mqtt_password,doc["mqtt_password"] ,  sizeof(config.config_mqtt_password)); 
   // strlcpy(config.config_wifi_ssid,doc["wifi_ssid"] ,  sizeof(config.config_wifi_ssid)); 
   // strlcpy(config.config_wifi_password,doc["wifi_password"]  ,  sizeof(config.config_mqtt_user)); 
-  
+  // strlcpy(config.name , doc["name"],  sizeof(config.name));
+
+
+
+//  config.config_mqtt_server = unconstchar(doc["mqtt_server"]);
+//  config.config_mqtt_port =  unconstchar(doc["mqtt_port"]);
+//  config.config_mqtt_user = unconstchar(doc["mqtt_user"]);
+//  config.config_mqtt_password = unconstchar(doc["mqtt_password"]);
+//  config.name = unconstchar(doc["name"]);
+
+//    config.config_mqtt_server = "192.168.0.10";
+//  config.config_mqtt_port =  "1883" ;
+//  config.name = "name";
+
   // Copy values from the JsonDocument to the Config
 //   config.port = doc["port"] | 2731;
 //   strlcpy(config.hostname,                  // <- destination
@@ -119,10 +145,11 @@ void saveConfiguration() {
 // doc["wifi_password"] = "manager1";
 
 // //MQTT configuration
- doc["mqtt_server"]= "m11.cloudmqtt.com";
- doc["mqtt_port"]= 11621;
- doc["mqtt_user"]= "kysbvegn";
- doc["mqtt_password"]= "Ww2mmbIEU9_e";
+ doc["mqtt_server"]= config.config_mqtt_server;
+ doc["mqtt_port"]= config.config_mqtt_port ;
+ doc["mqtt_user"]= config.config_mqtt_user ;
+ doc["mqtt_password"]= config.config_mqtt_password;
+ doc["name"]= "Motor1";
 
 
   //WIFI configuration
@@ -189,4 +216,15 @@ void configSetup() {
   // Dump config file
   Serial.println(F("Print config file..."));
 //   printFile(filename);
+}
+
+
+char* unconstchar(const char* s) {
+    int i;
+    char* res;
+    for (i = 0; s[i] != '\0'; i++) {
+        res[i] = s[i];
+    }
+    res[i] = '\0';
+    return res;
 }

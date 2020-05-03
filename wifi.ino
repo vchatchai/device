@@ -59,10 +59,10 @@ void setup_wifi() {
 
 
   WiFiManagerParameter custom_mqtt_server("server", "mqtt server", config.config_mqtt_server, 40);
-  // WiFiManagerParameter custom_mqtt_port("port", "mqtt port", config.config_mqtt_port, 6);
+  WiFiManagerParameter custom_mqtt_port("port", "mqtt port", config.config_mqtt_port, 6);
   WiFiManagerParameter custom_mqtt_user("user", "mqtt user", config.config_mqtt_user, 20);
   WiFiManagerParameter custom_mqtt_pass("password", "mqtt password", config.config_mqtt_password, 20);
-
+  WiFiManagerParameter custom_device_name("name", "device name", config.name, 20);
 
   //set config save notify callback
   wifiManager.setSaveConfigCallback(saveConfigCallback);
@@ -73,9 +73,10 @@ void setup_wifi() {
   //set static ip
   // wifiManager.setSTAStaticIPConfig(IPAddress(10,0,1,99), IPAddress(10,0,1,1), IPAddress(255,255,255,0));
   
+  wifiManager.addParameter(&custom_device_name);
   //add all your parameters here
   wifiManager.addParameter(&custom_mqtt_server);
-  // wifiManager.addParameter(&custom_mqtt_port);
+  wifiManager.addParameter(&custom_mqtt_port);
   wifiManager.addParameter(&custom_mqtt_user);
   wifiManager.addParameter(&custom_mqtt_pass);
 

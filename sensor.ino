@@ -66,6 +66,8 @@ void dhtLoop()
     obj["NodeID"] = mqtt_client_id;
     obj["Temperature"] = newTemp;
     obj["Humidity"] = newHum;
+    // String name(config.name);  
+    obj["Name"] = config.name;
     
     obj["SWITCH"] = switchStatus();
     obj["FLOAT_SWITCH_IN"] = floatSwitchValueIn();
